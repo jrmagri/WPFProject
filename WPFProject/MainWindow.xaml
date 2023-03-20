@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPFProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" x:Name="WindowClientes">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="cboName" ItemsSource="{Binding ElementName=WindowClientes, Path=Clientes}" DisplayMemberPath="PrimeiroNome" HorizontalAlignment="Left" Margin="26,93,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboName_SelectionChanged"/>
+        <TextBox x:Name="txtSobrenome" Text="{Binding ElementName=cboNome, Path=SelectedValue.SobreNome}" HorizontalAlignment="Left" Margin="191,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22"/>
+        <TextBox x:Name="txtTelefone" Text="{Binding ElementName=cboNome, Path=SelectedValue.Telefone}" HorizontalAlignment="Left" Margin="352,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22"/>
+        <Label Content="Sobrenome" HorizontalAlignment="Left" Margin="191,45,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label Content="Telefone" HorizontalAlignment="Left" Margin="352,45,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="26,45,0,0" VerticalAlignment="Top" Width="80"/>
+
+
+
+
+    </Grid>
+</Window>
