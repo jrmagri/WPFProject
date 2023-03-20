@@ -12,7 +12,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ComboBox x:Name="cboName" ItemsSource="{Binding ElementName=WindowClientes, Path=Clientes}" DisplayMemberPath="PrimeiroNome" HorizontalAlignment="Left" Margin="26,93,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboName_SelectionChanged"/>
+        <ComboBox x:Name="cbNome" ItemsSource="{Binding ElementName=WindowClientes, Path=Clientes}" DisplayMemberPath="PrimeiroNome" HorizontalAlignment="Left" Margin="26,93,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtSobrenome" Text="{Binding ElementName=cboNome, Path=SelectedValue.SobreNome}" HorizontalAlignment="Left" Margin="191,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22"/>
         <TextBox x:Name="txtTelefone" Text="{Binding ElementName=cboNome, Path=SelectedValue.Telefone}" HorizontalAlignment="Left" Margin="352,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22"/>
         <Label Content="Sobrenome" HorizontalAlignment="Left" Margin="191,45,0,0" VerticalAlignment="Top" Width="80"/>
