@@ -21,19 +21,19 @@ namespace WPFProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<Cliente> Clientes { get; set; }
+        ClienteController Controller;
         public MainWindow()
         {
             InitializeComponent();
 
-            Clientes = new ObservableCollection<Cliente>();
-            Clientes.Add(new Cliente { PrimeiroNome = "Maria", SobreNome = "Silva", Telefone = "16-98834-9098" });
-            Clientes.Add(new Cliente { PrimeiroNome = "Rodolfo", SobreNome = "Peratello", Telefone = "16-7788-3477" });
-            Clientes.Add(new Cliente { PrimeiroNome = "Bianca", SobreNome = "Rohrer", Telefone = "16-98823-3322" });
-            Clientes.Add(new Cliente { PrimeiroNome = "Matheus", SobreNome = "Rodrigues", Telefone = "16-99934-9196" });
+            Controller = DataContext as ClienteController;
 
+            Controller.Clientes.Add(new Cliente { PrimeiroNome = "Maria", SobreNome = "Silva", Telefone = "16-98834-9098" });
+            Controller.Clientes.Add(new Cliente { PrimeiroNome = "Rodolfo", SobreNome = "Peratello", Telefone = "16-7788-3477" });
+            Controller.Clientes.Add(new Cliente { PrimeiroNome = "Bianca", SobreNome = "Rohrer", Telefone = "16-98823-3322" });
+            Controller.Clientes.Add(new Cliente { PrimeiroNome = "Matheus", SobreNome = "Rodrigues", Telefone = "16-99934-9196" });
         }
 
-       
+
     }
 }

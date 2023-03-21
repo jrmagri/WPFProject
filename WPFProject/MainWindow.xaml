@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" x:Name="WindowClientes">
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:ClienteController/>
+    </Window.DataContext>
 
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ComboBox x:Name="cbNome" ItemsSource="{Binding ElementName=WindowClientes, Path=Clientes}" DisplayMemberPath="PrimeiroNome" HorizontalAlignment="Left" Margin="26,93,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtSobrenome" Text="{Binding ElementName=cboNome, Path=SelectedValue.SobreNome}" HorizontalAlignment="Left" Margin="191,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22"/>
-        <TextBox x:Name="txtTelefone" Text="{Binding ElementName=cboNome, Path=SelectedValue.Telefone}" HorizontalAlignment="Left" Margin="352,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox x:Name="cbNome" ItemsSource="{Binding Path=Clientes, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Path=ClienteSelecionado,UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="PrimeiroNome" HorizontalAlignment="Left" Margin="26,93,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtSobrenome" Text="{Binding Path=ClienteSelecionado.SobreNome, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="191,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22"/>
+        <TextBox x:Name="txtTelefone" Text="{Binding Path=ClienteSelecionado.Telefone, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="352,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="22"/>
         <Label Content="Sobrenome" HorizontalAlignment="Left" Margin="191,45,0,0" VerticalAlignment="Top" Width="80"/>
         <Label Content="Telefone" HorizontalAlignment="Left" Margin="352,45,0,0" VerticalAlignment="Top" Width="80"/>
         <Label Content="Nome" HorizontalAlignment="Left" Margin="26,45,0,0" VerticalAlignment="Top" Width="80"/>
